@@ -45,7 +45,6 @@ matplotlib==3.3.0
 mistune==0.8.4
 nbconvert==5.6.1
 nbformat==5.0.7
-nltk==3.5
 notebook==6.0.3
 numpy==1.19.0
 opencv-python==4.4.0.42
@@ -59,7 +58,6 @@ pkginfo==1.6.1
 prometheus-client==0.8.0
 prompt-toolkit==3.0.5
 Pygments==2.6.1
-PyMySQL==0.10.0
 pyparsing==2.4.7
 pyrsistent==0.16.0
 python-dateutil==2.8.1
