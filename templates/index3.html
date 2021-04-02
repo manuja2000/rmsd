@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAUS Random Forest</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" id="box">
+                <form action="{{ url_for('predict')}}" method="post">
+                    <div id="main">
+                        <h2>Prediction of RMSD Value</h2>
+                        <div class="form-group row">
+                            <label for="first" class="col-md-2 col-md-offset-2">Area</label>
+                            <div class="col-md-6"><input class="form-control" id="first" name="Area" type="number " required="required"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="second" class="col-md-2 col-md-offset-2">ED</label>
+                            <div class="col-md-6"><input class="form-control" id="second" name="ED" required="required"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="third" class="col-md-2 col-md-offset-2">Energy</label>
+                            <div class="col-md-6"><input class="form-control" id="third" name="Energy" required="required"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="fourth" class="col-md-2 col-md-offset-2">SS</label>
+                            <div class="col-md-6"><input class="form-control" id="fourth" name="SS" required="required"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="five" class="col-md-3 col-md-offset-1">ResidueLength</label>
+                            <div class="col-md-6"><input class="form-control" id="five" name="ResidueLength" required="required"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="six" class="col-md-3 col-md-offset-1">PairNumber</label>
+                            <div class="col-md-6"><input class="form-control" id="six" name="PairNumber" required="required"></div>
+                        </div>
+
+                            <div class="center">
+                                <button id="sub" type="submit" class="btn btn-default">Calculate RMSD</button>
+                            </div>
+                            <br><br><h3>{{ prediction_text }}</h3>
+                    </div>
+                    
+                </form>
+            </div>    
+        </div>
+    </div>
+        
+    <style>
+        body {
+            background: url('../static/images/Thapar.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 80px;
+        }
+
+        #main .center{
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #box{
+             -webkit-box-shadow: 0 10px 6px -6px #777;
+            -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+        }
+
+        #main{
+            padding: 3% 5%;
+            border: 2px solid #eeebdd;
+            border-radius: 10px;
+            background-color: #eeebdd;
+        }
+
+        #main h2{
+            margin-bottom: 70px;
+            text-align: center;
+        }
+        
+        #sub {
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: #810000;
+            color: #eeebdd;
+        }
+        
+        #first ,#second, #third, #fourth, #five, #six{
+            border-radius: 6px;
+            font-size: 20px;
+        }
+         
+    </style>
+</body>
+
+</html>
